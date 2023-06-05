@@ -7,20 +7,23 @@
       "esnext"
     ],
     "allowJs": true,
+    "types": ["cypress", "cypress-cucumber-preprocessor", "node"],
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "./src",
+    "experimentalDecorators": true
   },
   "include": [
     "src"
-  ]
+, "cucumber.js"  ]
 }
