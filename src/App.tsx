@@ -1,5 +1,6 @@
 import React from "react";
 import TodoForm from "./components/TodoForm";
+import TodoList from "./components/TodoList";
 import { Container, Typography, Box } from "@material-ui/core";
 
 const App: React.FC = () => {
@@ -17,6 +18,7 @@ const App: React.FC = () => {
         <Typography variant="h5" align="center" gutterBottom>
           TODO List
         </Typography>
+        <TodoForm />
       </Box>
     </Container>
   )
