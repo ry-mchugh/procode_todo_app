@@ -1,6 +1,7 @@
 import React from "react";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
+import CompletedList from "./components/CompletedList";
 import { Container, Typography, Box } from "@material-ui/core";
 
 const App: React.FC = () => {
@@ -18,6 +19,16 @@ const App: React.FC = () => {
         <Typography variant="h5" align="center" gutterBottom>
           TODO List
         </Typography>
+        <Box
+          bgcolor="#fff"
+          p={2}
+          borderRadius={8}
+          boxShadow="0px 2px 4px rgba(0, 0, 0, 0.25)"
+          mb={4}
+        >
+          <Typography variant="h6" gutterBottom>
+            Add a TODO
+          </Typography>
         <TodoForm />
       </Box>
       <Box
@@ -32,6 +43,18 @@ const App: React.FC = () => {
         </Typography>
         <TodoList />
       </Box>
+      <Box
+        bgcolor="#fff"
+        p={2}
+        borderRadius={8}
+        boxShadow="0px 2px 4px rgba(0, 0, 0, 0.25)"
+      >
+        <Typography variant="h6" gutterBottom>
+          Completed Items
+        </Typography>
+        <CompletedList />
+      </Box>
+    </Box>
     </Container>
   )
 };
