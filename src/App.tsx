@@ -20,6 +20,18 @@ const App: React.FC = () => {
         </Typography>
         <TodoForm />
       </Box>
+      <Box
+        bgcolor="#fff"
+        p={2}
+        borderRadius={8}
+        boxShadow="0px 2px 4px rgba(0, 0, 0, 0.25)"
+        mb={4}
+      >
+        <Typography variant="h6" gutterBottom>
+          Todo Items
+        </Typography>
+        <TodoList />
+      </Box>
     </Container>
   )
 };
