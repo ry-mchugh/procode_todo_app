@@ -25,11 +25,11 @@ To get started with the Todo List, follow these steps:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/procode-todo-list.git
+git clone https://github.com/your-username/procode-todo-app.git
 ```
 2. Navigate to the project directory:
 ```bash
-cd procode-todo-list
+cd procode-todo-app
 ```
 ### Usage
 1. Install the dependecides
