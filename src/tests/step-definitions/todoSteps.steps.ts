@@ -1,4 +1,4 @@
-const assert = require('chai').assert;
+import { expect, assert } from 'chai';
 const { binding, given, then, when } = require('cucumber-tsflow');
 
 @binding()
@@ -8,7 +8,6 @@ export class TodoSteps {
 
   @given(/^I am on the todo application$/)
   public givenIAmOnTodoApplication(): void {
-    // Implement the necessary steps to navigate to the todo application
   }
 
   @when(/^I add a task "(.*?)"$/)
@@ -18,7 +17,7 @@ export class TodoSteps {
 
   @then(/^the task "(.*?)" should be displayed in the todo list$/)
   public thenTaskShouldBeDisplayed(taskName: string): void {
-    assert.include(this.tasks, taskName);
+    expect(this.tasks).to.include(taskName);
   }
 
   @given(/^I have a task "(.*?)" in the todo list$/)
@@ -36,6 +35,16 @@ export class TodoSteps {
 
   @then(/^the task "(.*?)" should be moved to the completed list$/)
   public thenTaskShouldBeMovedToCompleted(taskName: string): void {
-    assert.include(this.completedTasks, taskName);
+    expect(this.completedTasks).to.include(taskName);
+  }
+
+  @when(/^I delete the task$/)
+  public whenIDeleteTask(): void {
+    this.tasks.pop();
+  }
+
+  @then(/^the task "(.*?)" should not be displayed in the todo list$/)
+  public thenTaskShouldNotBeDisplayed(taskName: string): void {
+    expect(this.tasks).to.not.include(taskName);
   }
 }
