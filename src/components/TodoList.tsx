@@ -1,5 +1,6 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
+import { Todo } from "../features/todo/todoSlice";
 import { toggleTodo, deleteTodo } from "../features/todo/todoSlice";
 import {
   List,
@@ -10,8 +11,10 @@ import {
 } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
 
-const TodoList: React.FC = () => {
-  const todos = useSelector((state: any) => state.todo.todos);
+interface TodoListProps {
+  todos: Todo[];
+}
+const TodoList: React.FC<TodoListProps> = ({ todos }) => {
   const dispatch = useDispatch();
 
   const handleToggleTodo = (id: number) => {
@@ -24,7 +27,7 @@ const TodoList: React.FC = () => {
 
   return (
     <List>
-      {todos.map((todo: any) => (
+      {todos.map((todo) => (
         <ListItem key={todo.id} button>
           <ListItemIcon>
             <Checkbox
