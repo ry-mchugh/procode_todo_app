@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { RootState } from "./app/store"; // <--- You need to define RootState
+import { RootState } from "./app/store";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 import { Container, Typography, Box } from "@material-ui/core";
